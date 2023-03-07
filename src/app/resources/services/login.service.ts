@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   public doLogin(requestLogin: RequestLogin) : Observable<ResponseLogin> {
-    return this.httpClient.get<ResponseLogin>('https://localhost:7094/rpgmd/login');
+    return this.httpClient.post<ResponseLogin>('https://localhost:7094/rpgmd/login', requestLogin);
 
   }
 }
